@@ -4,6 +4,7 @@ import compression from "compression";
 import cors from "cors";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import router from "router";
 
 dotenv.config();
 
@@ -15,6 +16,7 @@ server.use(cors({ credentials: true }));
 server.use(express.json());
 server.use(cookieParser());
 server.use(compression());
+server.use("/", router);
 
 // Database connection
 const db_connection: string = process.env.MONGODB_URL || "";
