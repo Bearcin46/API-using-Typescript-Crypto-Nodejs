@@ -28,7 +28,7 @@ export const login = async (req: express.Request, res: express.Response) => {
 
     await user.save();
 
-    res.cookie("BEARCIN-AUTH", user.authentication.sessionToken, {
+    res.cookie("SWTY-AUTH", user.authentication.sessionToken, {
       domain: "localhost",
       path: "/",
     });
